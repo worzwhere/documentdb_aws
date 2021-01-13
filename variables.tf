@@ -90,3 +90,9 @@ variable "engine_version" {
   default     = ""
   description = "Name of the DocumentDB Engine"
 }
+
+variable "enabled_cloudwatch_logs_exports" {
+  type        = list(string)
+  description = "List of log types to export to cloudwatch. The following log types are supported: `audit`, `error`, `general`, `slowquery`"
+  default     = ["audit", "profiler"]
+}
